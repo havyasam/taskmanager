@@ -1,10 +1,18 @@
 import React from 'react'
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
+import Edit from './components/Edit';
 
-const App = () => {
+function App() {
   return (
-   <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />}>  </Route>
+      <Route path="edit/:taskID" element={<Edit />} />
+    
+    </Routes>
+  </BrowserRouter>
   )
 }
 

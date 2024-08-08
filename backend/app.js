@@ -1,13 +1,17 @@
-require('./db/connect')
+
 const express = require('express')
 const app =  express();
 const port = 3000
 const connectDb = require('./db/connect')
-const router =require('./routes/route');
+const router =require('./routes/route')
+const cors = require('cors');
+
+app.use(cors());
+
 require('dotenv').config()
 
 app.use(express.json())
-app.use('/api/v1/router',router)
+app.use('/api/v1/router/',router)
 
 
 const start = async()=>{
